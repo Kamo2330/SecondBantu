@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pawn an Item — 2ndBantu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <script defer src="/assets/js/app.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+            <a href="/" class="logo">2ndBantu</a>
+            <nav class="nav">
+                <a href="/pawn/" aria-current="page">Pawn Item</a>
+                <a href="/shop/">Shop Deals</a>
+                <a href="/sell/">Sell Direct</a>
+                <a href="/how/">How It Works</a>
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+            </nav>
+      <div class="actions">
+        <button id="themeToggle" class="btn btn-secondary">Theme</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" style="padding:24px 0">
+    <h1>Pawn an Item</h1>
+    <p class="helper">Upload photos, describe your item, and get an instant valuation.</p>
+
+    <form id="pawnForm" class="stepper">
+      <div class="step">
+        <div class="field">
+          <label for="photos">Upload photos (min 3, max 12)</label>
+          <input id="photos" name="photos" type="file" accept="image/*" multiple>
+          <div id="photoHint" class="helper">0 selected • need at least 3 (max 12)</div>
+        </div>
+        <div style="display:flex;gap:8px;margin-top:8px">
+          <button class="btn btn-primary" data-next>Next</button>
+        </div>
+      </div>
+
+      <div class="step hidden">
+        <div class="grid two">
+          <div class="field">
+            <label for="category">Item category</label>
+            <select id="category" name="category" required>
+              <option value="electronics">Electronics</option>
+              <option value="jewelry">Jewelry</option>
+              <option value="appliances">Appliances</option>
+              <option value="fashion">Fashion</option>
+              <option value="tools">Tools</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="condition">Condition</label>
+            <select id="condition" name="condition" required>
+              <option>New</option>
+              <option>Like New</option>
+              <option selected>Good</option>
+              <option>Fair</option>
+              <option>Poor</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="desc">Short description</label>
+          <textarea id="desc" name="desc" placeholder="Brand, model, included accessories, any issues..."></textarea>
+        </div>
+        <div style="display:flex;gap:8px;margin-top:8px">
+          <button class="btn btn-outline" data-prev>Back</button>
+          <button id="calcOffer" class="btn btn-secondary">Get instant valuation</button>
+        </div>
+      </div>
+
+      <div class="step hidden">
+        <div id="offerBox" class="field" style="display:none"></div>
+        <div class="grid two">
+          <div class="field">
+            <label for="name">Your name</label>
+            <input id="name" name="name" type="text" required>
+          </div>
+          <div class="field">
+            <label for="phone">Phone / WhatsApp</label>
+            <input id="phone" name="phone" type="text" required>
+          </div>
+        </div>
+        <div class="field">
+          <label for="email">Email (optional)</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com">
+        </div>
+        <div style="display:flex;gap:8px;margin-top:8px">
+          <button class="btn btn-outline" data-prev>Back</button>
+          <button id="submitPawn" class="btn btn-primary" type="submit" disabled>Submit & Get Cash Offer</button>
+        </div>
+      </div>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <div class="logo">2ndBantu</div>
+        <p>Secure, Fast & Fair Valuations.</p>
+      </div>
+      <div class="foot-links">
+                <a href="/how/">How It Works</a>
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+      </div>
+    </div>
+    <div class="legal">© <span id="year"></span> 2ndBantu</div>
+  </footer>
+</body>
+</html>
+
+

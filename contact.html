@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us — 2ndBantu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <script defer src="/assets/js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded',function(){
+      var contactForm = document.getElementById('contactForm');
+      contactForm && contactForm.addEventListener('submit', function(e){
+        e.preventDefault();
+        alert('Thanks! We will get back to you soon.');
+        window.location.href = '/thankyou/';
+      });
+    });
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+            <a href="/" class="logo">2ndBantu</a>
+            <nav class="nav">
+                <a href="/pawn/">Pawn Item</a>
+                <a href="/shop/">Shop Deals</a>
+                <a href="/sell/">Sell Direct</a>
+                <a href="/how/">How It Works</a>
+                <a href="/about/">About</a>
+                <a href="/contact/" aria-current="page">Contact</a>
+            </nav>
+      <div class="actions">
+        <button id="themeToggle" class="btn btn-secondary">Theme</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" style="padding:24px 0">
+    <h1>Contact Us</h1>
+    <div class="grid two">
+      <section class="card" style="padding:16px">
+        <h3>Support</h3>
+        <p class="helper">Live chat / WhatsApp support</p>
+        <p><a id="whatsappLink" class="btn btn-primary" href="#">Chat on WhatsApp</a></p>
+        <p>Email: <a href="mailto:support@2ndbantu.com">support@2ndbantu.com</a></p>
+        <p>Phone: <a href="tel:+10000000000">+1 000 000 0000</a></p>
+      </section>
+      <section class="card" style="padding:16px">
+        <h3>Send a message</h3>
+        <form id="contactForm">
+          <div class="grid two">
+            <div class="field">
+              <label for="cname">Name</label>
+              <input id="cname" type="text" required>
+            </div>
+            <div class="field">
+              <label for="cphone">Phone</label>
+              <input id="cphone" type="text" required>
+            </div>
+          </div>
+          <div class="field">
+            <label for="cemail">Email (optional)</label>
+            <input id="cemail" type="email" placeholder="you@example.com">
+          </div>
+          <div class="field">
+            <label for="cmsg">Message</label>
+            <textarea id="cmsg" required></textarea>
+          </div>
+          <button class="btn btn-primary" type="submit">Send</button>
+        </form>
+      </section>
+    </div>
+
+    <section class="card" style="padding:16px;margin-top:16px">
+      <h3>Branches</h3>
+      <p class="helper">If physical stores exist, list them below.</p>
+      <ul>
+        <li>Main Branch — 123 Market Street</li>
+        <li>North Branch — 45 Uptown Ave</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <div class="logo">2ndBantu</div>
+        <p>We're here to help.</p>
+      </div>
+      <div class="foot-links">
+                <a href="/how/">How It Works</a>
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+      </div>
+    </div>
+    <div class="legal">© <span id="year"></span> 2ndBantu</div>
+  </footer>
+</body>
+</html>
+
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop Deals — 2ndBantu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <script defer src="/assets/js/app.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+            <a href="/" class="logo">2ndBantu</a>
+            <nav class="nav">
+                <a href="/pawn/">Pawn Item</a>
+                <a href="/shop/" aria-current="page">Shop Deals</a>
+                <a href="/sell/">Sell Direct</a>
+                <a href="/how/">How It Works</a>
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+            </nav>
+      <div class="actions">
+        <button id="themeToggle" class="btn btn-secondary">Theme</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" style="padding:24px 0">
+    <h1>Shop Deals</h1>
+    <div class="grid two" style="align-items:start">
+      <aside class="card" style="padding:12px">
+        <div class="field">
+          <label for="filterCategory">Category</label>
+          <select id="filterCategory">
+            <option value="all">All</option>
+            <option value="electronics">Electronics</option>
+            <option value="jewelry">Jewelry</option>
+            <option value="appliances">Appliances</option>
+            <option value="fashion">Fashion</option>
+            <option value="tools">Tools</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="filterCondition">Condition</label>
+          <select id="filterCondition">
+            <option value="all">All</option>
+            <option>New</option>
+            <option>Like New</option>
+            <option>Good</option>
+            <option>Fair</option>
+            <option>Poor</option>
+          </select>
+        </div>
+        <div class="grid two">
+          <div class="field">
+            <label for="priceMin">Min price</label>
+            <input id="priceMin" type="number" placeholder="0">
+          </div>
+          <div class="field">
+            <label for="priceMax">Max price</label>
+            <input id="priceMax" type="number" placeholder="1000">
+          </div>
+        </div>
+      </aside>
+      <section>
+        <div id="shopGrid" class="grid products"></div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <div class="logo">2ndBantu</div>
+        <p>Secure checkout • Buyer protection</p>
+      </div>
+      <div class="foot-links">
+                <a href="/how/">How It Works</a>
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+      </div>
+    </div>
+    <div class="legal">© <span id="year"></span> 2ndBantu</div>
+  </footer>
+</body>
+</html>
+
+

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2ndBantu — Online Pawnshop</title>
+    <meta name="description" content="Turn your items into instant cash with 2ndBantu. Pawn, sell, or shop quality second-hand deals with secure, fast, and fair valuations.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="icon" href="/assets/img/favicon.svg">
+    <script defer src="/assets/js/app.js"></script>
+    <script>
+        window.__INITIAL_THEME__ = 'gold';
+    </script>
+    <style>/* critical hero styles for fast paint */ body{opacity:0;transition:opacity .2s ease} html.ready body{opacity:1}</style>
+    <script>document.documentElement.classList.add('ready')</script>
+    <meta name="theme-color" content="#111111">
+    <meta name="color-scheme" content="light dark">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">2ndBantu</a>
+            <nav class="nav">
+                <a href="/pawn/">Pawn Item</a>
+                <a href="/shop/">Shop Deals</a>
+                <a href="/sell/">Sell Direct</a>
+                <a href="/how/">How It Works</a>
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+            </nav>
+            <div class="actions">
+                <button id="themeToggle" class="btn btn-secondary" aria-label="Toggle color theme">Theme</button>
+                <a class="btn btn-primary" href="/pawn/">Get Cash</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container hero-inner">
+                <h1>Turn your items into instant cash with <span>2ndBantu</span></h1>
+                <p class="sub">Secure, fast & fair valuations. Pawn, sell, or shop verified deals.</p>
+                <div class="cta-row">
+                    <a class="btn btn-primary" href="/pawn/">Pawn Item</a>
+                    <a class="btn btn-outline" href="/shop/">Shop Deals</a>
+                    <a class="btn btn-secondary" href="/sell/">Sell Now</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="trust">
+            <div class="container trust-inner">
+                <div class="trust-item">🔒 Secure</div>
+                <div class="trust-item">⚡ Fast</div>
+                <div class="trust-item">🤝 Fair</div>
+                <div class="trust-item">💬 Support</div>
+            </div>
+        </section>
+
+        <section class="featured">
+            <div class="container">
+                <div class="section-head">
+                    <h2>Featured deals</h2>
+                    <div class="tabs" role="tablist" aria-label="Categories">
+                        <button class="tab active" data-filter="all">All</button>
+                        <button class="tab" data-filter="electronics">Electronics</button>
+                        <button class="tab" data-filter="jewelry">Jewelry</button>
+                        <button class="tab" data-filter="tools">Tools</button>
+                        <button class="tab" data-filter="luxury">Luxury</button>
+                    </div>
+                </div>
+                <div id="featuredGrid" class="grid products">
+                    <!-- Cards injected by JS -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div>
+                <div class="logo">2ndBantu</div>
+                <p>Giving your items a 2nd life, giving you instant value.</p>
+            </div>
+            <div class="foot-links">
+                <a href="/how/">How It Works</a>
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+                <a href="#" id="whatsappLink">WhatsApp</a>
+            </div>
+        </div>
+        <div class="legal">© <span id="year"></span> 2ndBantu. All rights reserved.</div>
+    </footer>
+</body>
+</html>
+
+

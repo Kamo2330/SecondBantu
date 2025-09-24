@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sell Direct — 2ndBantu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <script defer src="/assets/js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded',function(){
+      var fastBuy = document.getElementById('fastBuy');
+      var offerBox = document.getElementById('sellOffer');
+      var form = document.getElementById('sellForm');
+      if(fastBuy){
+        fastBuy.addEventListener('click', function(e){
+          e.preventDefault();
+          var cat = document.getElementById('sellCategory').value;
+          var cond = document.getElementById('sellCondition').value;
+          var base = { electronics: 220, jewelry: 450, appliances: 160, fashion: 110, tools: 120 }[cat]||150;
+          var mult = { 'New':1.0,'Like New':0.9,'Good':0.7,'Fair':0.5,'Poor':0.3 }[cond]||0.6;
+          var offer = Math.round(base*mult*1.05);
+          offerBox.textContent = 'Fast-buy offer: '+formatCurrency(offer)+' • Paid within 24h';
+          offerBox.style.display = 'block';
+        });
+      }
+      form && form.addEventListener('submit', function(e){
+        e.preventDefault();
+        alert('Listing submitted! We will review and contact you.');
+        window.location.href = '/thankyou/';
+      });
+    });
+  </script>
+  <style>.inline{display:flex;gap:8px;flex-wrap:wrap}</style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+            <a href="/" class="logo">2ndBantu</a>
+            <nav class="nav">
+                <a href="/pawn/">Pawn Item</a>
+                <a href="/shop/">Shop Deals</a>
+                <a href="/sell/" aria-current="page">Sell Direct</a>
+                <a href="/how/">How It Works</a>
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+            </nav>
+      <div class="actions">
+        <button id="themeToggle" class="btn btn-secondary">Theme</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" style="padding:24px 0">
+    <h1>Sell Direct (Not Pawn)</h1>
+    <p class="helper">List your item for sale or choose our Fast-buy option for instant payment.</p>
+
+    <form id="sellForm" class="grid two">
+      <div class="card" style="padding:12px">
+        <div class="field">
+          <label for="sellPhotos">Photos (min 3, max 12)</label>
+          <input id="sellPhotos" type="file" accept="image/*" multiple required>
+        </div>
+        <div class="field">
+          <label for="sellTitle">Item title</label>
+          <input id="sellTitle" type="text" placeholder="e.g., iPhone 13 Pro 128GB" required>
+        </div>
+        <div class="grid two">
+          <div class="field">
+            <label for="sellCategory">Category</label>
+            <select id="sellCategory" required>
+              <option value="electronics">Electronics</option>
+              <option value="jewelry">Jewelry</option>
+              <option value="appliances">Appliances</option>
+              <option value="fashion">Fashion</option>
+              <option value="tools">Tools</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="sellCondition">Condition</label>
+            <select id="sellCondition" required>
+              <option>New</option>
+              <option>Like New</option>
+              <option selected>Good</option>
+              <option>Fair</option>
+              <option>Poor</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="sellDesc">Description</label>
+          <textarea id="sellDesc" placeholder="Details, inclusions, receipts, defects, etc." required></textarea>
+        </div>
+        <div class="grid two">
+          <div class="field">
+            <label for="sellPrice">Your price ($)</label>
+            <input id="sellPrice" type="number" min="1" step="1" required>
+          </div>
+          <div class="field">
+            <label>&nbsp;</label>
+            <div class="inline">
+              <button id="fastBuy" class="btn btn-secondary">Get Fast-buy Offer</button>
+              <div id="sellOffer" class="helper" style="display:none"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card" style="padding:12px">
+        <div class="grid two">
+          <div class="field">
+            <label for="sellerName">Your name</label>
+            <input id="sellerName" type="text" required>
+          </div>
+          <div class="field">
+            <label for="sellerPhone">Phone / WhatsApp</label>
+            <input id="sellerPhone" type="text" required>
+          </div>
+        </div>
+        <div class="field">
+          <label for="sellerEmail">Email (optional)</label>
+          <input id="sellerEmail" type="email" placeholder="you@example.com">
+        </div>
+        <button class="btn btn-primary" type="submit">Submit Listing</button>
+      </div>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <div class="logo">2ndBantu</div>
+        <p>Fast-buy available on eligible items.</p>
+      </div>
+      <div class="foot-links">
+                <a href="/how/">How It Works</a>
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+      </div>
+    </div>
+    <div class="legal">© <span id="year"></span> 2ndBantu</div>
+  </footer>
+</body>
+</html>
+
+
